@@ -1,0 +1,41 @@
+﻿@model TextModel
+
+<h1>Arabic Text Operations</h1>
+
+<form asp-action="ReverseText" method="post">
+    <div class="form-group">
+        <label for="ArabicText">Enter Arabic Text:</label>
+        <input asp-for="ArabicText" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Reverse Text</button>
+</form>
+
+<form asp-action="CountWords" method="post">
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Count Words</button>
+    </div>
+</form>
+
+<form asp-action="CountLetters" method="post">
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Count Letters</button>
+    </div>
+</form>
+
+@if (ViewData["ReversedText"] != null)
+{
+    <h2>Reversed Text:</h2>
+    <p>@ViewData["ReversedText"]</p>
+}
+
+@if (ViewData["WordCount"] != null)
+{
+    <h2>Word Count:</h2>
+    <p>@ViewData["WordCount"]</p>
+}
+
+@if (ViewData["LetterCount"] != null)
+{
+    <h2>Letter Count:</h2>
+    <p>@ViewData["LetterCount"]</p>
+}
